@@ -5,7 +5,9 @@ const page = () => {
   return (
     <div>
      <Header/>
-      Contact
+      <div className='h-screen'>
+        Contact
+      </div>
     </div>
   )
 }

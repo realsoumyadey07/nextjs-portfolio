@@ -6,7 +6,9 @@ const page = () => {
   return (
     <div>
       <Header />
-      About
+      <div className='h-screen'>
+        About
+      </div>
     </div>
   )
 }

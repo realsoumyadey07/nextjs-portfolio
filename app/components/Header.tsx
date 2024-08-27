@@ -1,10 +1,10 @@
 "use client"
-import Link from 'next/link';
 import React, { FC, useEffect, useState } from 'react'
 import ThemeSwitcher from '../utils/ThemeSwitcher';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import NavItems from './NavItems';
 import { TextGenerateEffect } from './ui/text-generate-effect';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -35,7 +35,9 @@ const Header: FC<Props> = (props: Props) => {
                     <div className='w-[95%] 800px:w-[92%] m-auto py-2 h-full'>
                          <div className='w-full h-[80px] flex items-center justify-between p-3'>
                               <div className='flex h-full items-center justify-center'>
-                                   <TextGenerateEffect words="Soumyadip Dey" />
+                                   <Link href={"/"}>
+                                        <TextGenerateEffect words="Soumyadip Dey" />
+                                   </Link>
                               </div>
                               <div className='flex items-center'>
                                    <NavItems />
