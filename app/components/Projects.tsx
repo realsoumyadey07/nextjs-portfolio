@@ -1,15 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
 
-const page = () => {
+const Projects = () => {
   return (
-    <div>
-     <Header/>
-      <div className='h-screen'>
+      <div name="Projects" className='h-screen'>
         Projects
       </div>
-    </div>
   )
 }
 
-export default page
+export default Projects

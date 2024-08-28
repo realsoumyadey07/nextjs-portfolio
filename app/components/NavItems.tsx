@@ -1,60 +1,58 @@
-import Link from 'next/link'
 import React from 'react'
+import {Link} from "react-scroll"
 import { TextGenerateEffect } from './ui/text-generate-effect'
 
 type NavbarItemsProp = {
   isSidebarOpen?: boolean
 }
 
+const navLinks = [
+  {
+    id: 1,
+    title: "Hero"
+  },
+  {
+    id: 2,
+    title: "Projects"
+  },
+  {
+    id: 3,
+    title: "Skills"
+  },
+  {
+    id: 4,
+    title: "Contact"
+  }
+]
+
 
 const NavItems = ({ isSidebarOpen }: NavbarItemsProp) => {
   return (
     <>
-      <div className='hidden lg:flex items-center gap-[5rem] lg:mr-10'>
-        <div >
-          <Link href={"/"}>
-            <TextGenerateEffect words='Home' />
-          </Link>
-        </div>
-        <div>
-          <Link href={"/about"}>
-            <TextGenerateEffect words='About' />
-          </Link>
-        </div>
-        <div>
-          <Link href={"/projects"}>
-            <TextGenerateEffect words='Projects' />
-          </Link>
-        </div>
-        <div>
-          <Link href={"/contact"}>
-            <TextGenerateEffect words='Contact' />
-          </Link>
-        </div>
-      </div>
+      <ul className='hidden lg:flex cursor-pointer items-center gap-[5rem] lg:mr-10'>
+        {
+          navLinks && navLinks.map((navLink) => (
+            <li key={navLink.id}>
+              <Link to={navLink.title} smooth={true} duration={500} spy={true} offset={-80}>
+                <TextGenerateEffect words={navLink.title} />
+              </Link>
+            </li>
+          ))
+        }
+        
+      </ul>
       {isSidebarOpen && (
-        <div className='lg:hidden h-[40%] flex flex-col justify-evenly items-center'>
-          <div>
-            <Link href={"/"}>
-              <TextGenerateEffect words='Home' />
-            </Link>
-          </div>
-          <div>
-            <Link href={"/about"}>
-              <TextGenerateEffect words='About' />
-            </Link>
-          </div>
-          <div>
-            <Link href={"/projects"}>
-              <TextGenerateEffect words='Projects' />
-            </Link>
-          </div>
-          <div>
-            <Link href={"/contact"}>
-              <TextGenerateEffect words='Contact' />
-            </Link>
-          </div>
-        </div>
+        <ul className='lg:hidden h-[40%] cursor-pointer flex flex-col justify-evenly items-center'>
+          {
+          navLinks && navLinks.map((navLink) => (
+            <li key={navLink.id}>
+              <Link to={navLink.title} smooth={true} duration={500} spy={true} offset={-80}>
+                <TextGenerateEffect words={navLink.title} />
+              </Link>
+            </li>
+          ))
+        }
+        </ul>
       )}
     </>
   )
