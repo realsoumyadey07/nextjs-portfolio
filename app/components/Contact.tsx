@@ -8,6 +8,7 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
+import { Element } from "react-scroll";
 
 
 const Contact = () => {
@@ -16,7 +17,7 @@ const Contact = () => {
     console.log("Form submitted");
   };
   return (
-    <div name="Contact" className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    <Element name="Contact" className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Contact with Soumyadip
       </h2>
@@ -90,7 +91,7 @@ const Contact = () => {
           </button>
         </div>
       </form>
-    </div>
+    </Element>
   );
 }
 

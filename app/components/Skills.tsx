@@ -1,10 +1,11 @@
 import React from 'react'
+import { Element } from 'react-scroll'
 
 const Skills = () => {
   return (
-    <div name="Skills" className='h-screen'>
+    <Element name="Skills" className='h-screen'>
       Skills
-    </div>
+    </Element>
   )
 }
 

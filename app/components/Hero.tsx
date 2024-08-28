@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import MyPic from "../../public/assets/me.jpg";
 import Link from 'next/link';
 import { BackgroundGradient } from './ui/background-gradient';
@@ -12,10 +12,17 @@ import {
   IconBrandX
 } from "@tabler/icons-react";
 import { FloatingDock } from './ui/floating-dock';
+import { Element } from "react-scroll";
 
 
+interface MyDivProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  children: React.ReactNode;
+  name?: string;
+  className?: string; // Make className optional
+}
 
-const Hero  = () => {
+
+const Hero:React.FC<MyDivProps>  = () => {
   const words = [
     { text: "Hi", className: "text-3xl" },
     { text: "this", className: "text-3xl" },
@@ -52,7 +59,7 @@ const Hero  = () => {
   ];
 
   return (
-    <div name="Hero" className='w-[95%] lg:w-[92%] m-auto min-h-screen flex flex-col justify-between'>
+    <Element name="Hero" className='w-[95%] lg:w-[92%] m-auto min-h-screen flex flex-col justify-between'>
       <div className='flex flex-col justify-between items-center py-5 px-3 flex-grow'>
         <div className='lg:w-[394px] h-auto'>
           <BackgroundGradient className="rounded-[22px] max-w-sm bg-white dark:bg-zinc-900">
@@ -86,7 +93,7 @@ const Hero  = () => {
 
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 
