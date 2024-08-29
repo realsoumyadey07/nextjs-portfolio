@@ -4,9 +4,11 @@ import { Element } from 'react-scroll'
 
 const Projects = () => {
   return (
-      <Element name="Projects" className='h-screen'>
+    <div id="Projects">
+      <div className='h-screen'>
         Projects
-      </Element>
+      </div>
+      </div>
   )
 }
 

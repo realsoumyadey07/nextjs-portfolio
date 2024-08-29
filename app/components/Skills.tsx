@@ -3,9 +3,11 @@ import { Element } from 'react-scroll'
 
 const Skills = () => {
   return (
-    <Element name="Skills" className='h-screen'>
+    <div id="Skills">
+    <div className='h-screen'>
       Skills
-    </Element>
+    </div>
+    </div>
   )
 }
 
