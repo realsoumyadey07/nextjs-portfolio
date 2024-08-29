@@ -26,8 +26,6 @@ const Hero  = () => {
   ];
 
   const links = [
-    
-    
     {
       title: "Linkedin",
       icon: (

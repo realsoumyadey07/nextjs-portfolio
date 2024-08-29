@@ -8,7 +8,7 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
-import { Element } from "react-scroll";
+import Link from "next/link";
 
 
 const Contact = () => {
@@ -18,7 +18,7 @@ const Contact = () => {
   };
   return (
     <div id="Contact">
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+    <div className="max-w-md w-full mx-auto border-none rounded-none md:rounded-2xl p-4 md:p-8 bg-transparent dark:bg-transparent">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
         Contact with Soumyadip
       </h2>
@@ -42,7 +42,7 @@ const Contact = () => {
         <LabelInputContainer className="mb-8">
           <Label htmlFor="twitterpassword">Leave a massage</Label>
           <Input
-          className="h-[100px]"
+            className="h-[100px]  dark:bg-transparent"
             id="message"
             placeholder="Write something here"
             type="text"
@@ -60,36 +60,36 @@ const Contact = () => {
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
         <div className="flex flex-col space-y-4">
-          <button
+          <Link
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            href={"https://github.com/realsoumyadey07"}
           >
             <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">
               GitHub
             </span>
             <BottomGradient />
-          </button>
-          <button
+          </Link>
+          <Link
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            href={"https://www.linkedin.com/in/soumyadip-dey-01782a251/"}
           >
             <IconBrandLinkedin className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">
               Linkedin
             </span>
             <BottomGradient />
-          </button>
-          <button
+          </Link>
+          <Link
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            href={"https://x.com/Realsoumyadey"}
           >
             <IconBrandX className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-neutral-700 dark:text-neutral-300 text-sm">
               X
             </span>
             <BottomGradient />
-          </button>
+          </Link>
         </div>
       </form>
     </div>
