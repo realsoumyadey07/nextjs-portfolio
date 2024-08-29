@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { HoverEffect } from './ui/card-hover-effect';
+import { TextGenerateEffect } from './ui/text-generate-effect';
 
 const Skills = () => {
   const projects = [
@@ -43,9 +44,9 @@ const Skills = () => {
   ];
   return (
     <div id="Skills" className='min-h-screen'>
-    <div className="max-w-5xl mx-auto px-8">
-      <HoverEffect items={projects} />
-    </div>
+      <div className="max-w-5xl mx-auto px-8">
+        <HoverEffect items={projects} />
+      </div>
     </div>
   )
 }
