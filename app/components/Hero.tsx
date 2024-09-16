@@ -12,7 +12,6 @@ import {
   IconBrandX
 } from "@tabler/icons-react";
 import { FloatingDock } from './ui/floating-dock';
-import { Element } from "react-scroll";
 
 
 
