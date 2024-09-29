@@ -34,7 +34,7 @@ const Projects = () => {
       <div className='w-[95%] lg:w-[92%] lg:flex-row m-auto min-h-screen flex flex-col justify-between container '>
         {
           projectData && projectData.map((i) => (
-            <div className='lg:w-[394px] h-auto my-6'>
+            <div key={i.title} className='lg:w-[394px] h-auto my-6'>
               <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
                 <Image
                   src={i.image}
