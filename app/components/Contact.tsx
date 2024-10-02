@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
@@ -10,15 +10,38 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleOnChange = (e: any) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted");
+    try {
+      const res = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        alert("Form submitted successfully");
+      } else {
+        alert("Failed to submit form. Please try again later.");
+      }
+    } catch (error: any) {
+      alert(error.message);
+    }
   };
   return (
     <div id="Contact">
-      <div  className="max-w-md w-full mx-auto border-none rounded-none md:rounded-2xl p-4 md:p-8 bg-transparent dark:bg-transparent">
+      <div className="max-w-md w-full mx-auto border-none rounded-none md:rounded-2xl p-4 md:p-8 bg-transparent dark:bg-transparent">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Contact with Soumyadip
         </h2>
@@ -30,22 +53,38 @@ const Contact = () => {
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="fullname">Full name</Label>
-              <Input id="fullname" placeholder="Ram" type="text" />
+              <Input
+                name="name"
+                id="fullname"
+                placeholder="Ram"
+                type="text"
+                value={form.name}
+                onChange={handleOnChange}
+              />
             </LabelInputContainer>
-
           </div>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+            <Input
+              name="email"
+              id="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+              value={form.email}
+              onChange={handleOnChange}
+            />
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-8">
             <Label htmlFor="twitterpassword">Leave a massage</Label>
             <Input
+              name="message"
               className="h-[100px]"
               id="message"
               placeholder="Write something here"
               type="text"
+              value={form.message}
+              onChange={handleOnChange}
             />
           </LabelInputContainer>
 
@@ -98,9 +137,9 @@ const Contact = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Contact
+export default Contact;
 
 const BottomGradient = () => {
   return (
