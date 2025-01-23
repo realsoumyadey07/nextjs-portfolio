@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     }
     await sendEmail({ name, email, message });
     return NextResponse.json(
-      { success: true, message: "Email sent successfully!" },
+      { success: true, message: "Email sent successfully done!" },
       { status: 200 }
     );
   } catch (error: any) {
