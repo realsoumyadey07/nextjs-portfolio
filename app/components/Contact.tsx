@@ -31,7 +31,7 @@ const Contact = () => {
         body: JSON.stringify(form),
       });
       if (res.ok) {
-        alert("Form submitted successfully");
+        alert("Email sent successfully!");
       } else {
         alert("Failed to submit form. Please try again later.");
       }
